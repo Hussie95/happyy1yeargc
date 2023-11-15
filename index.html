@@ -150,17 +150,17 @@
                 transform: translateY(0) scale(1);
             }
         }
-        .hearts {
-            width: 20px;
-            height: 20px;
-            background: url('R.png'); /* Replace 'heart.png' with the path to your heart image */
-            background-size: contain;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: heartsPopupAnimation 1s infinite alternate;
-        }
+.hearts {
+    width: 20px;
+    height: 20px;
+    background: url('heart.png'); /* Adjust the path as needed */
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: heartsPopupAnimation 1s infinite alternate;
+}
 
         @keyframes heartsPopupAnimation {
             0% {
