@@ -8,15 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet"> <!-- Added Google Font -->
 
     <style>
-        @media only screen and (max-width: 600px) {
-    /* Add styles for smaller screens */
-    .hearts {
-        width: 15px;
-        height: 15px;
-    }
-}
         body {
-            font-family: 'Quicksand', sans-serif; /* Changed font */
+            font-family: 'Quicksand', sans-serif;
             text-align: center;
             background: linear-gradient(45deg, #3B5998, #4CAF50);
             background-size: 400% 400%;
@@ -85,6 +78,19 @@
             font-size: 18px;
             position: relative;
             animation: heartsAnimation 1s infinite alternate;
+            display: inline-block;
+        }
+
+        .hearts {
+            width: 20px;
+            height: 20px;
+            background: url('R.png'); /* Adjust the path as needed */
+            background-size: contain;
+            position: absolute;
+            top: 50%; /* Adjust the positioning as needed */
+            left: 100%; /* Adjust the positioning as needed */
+            transform: translate(-50%, -50%);
+            animation: heartsPopupAnimation 1s infinite alternate;
         }
 
         .popup {
@@ -150,17 +156,6 @@
                 transform: translateY(0) scale(1);
             }
         }
-.hearts {
-    width: 20px;
-    height: 20px;
-    background: url('R.png'); /* Adjust the path as needed */
-    background-size: contain;
-    position: absolute;
-    top: 100px;
-    left: 100px;
-    transform: translate(-50%, -50%);
-    animation: heartsPopupAnimation 1s infinite alternate;
-}
 
         @keyframes heartsPopupAnimation {
             0% {
@@ -171,16 +166,6 @@
             }
             100% {
                 transform: translateY(0) scale(1);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
             }
         }
     </style>
@@ -200,24 +185,19 @@
     <section id="wishes">
         <h2>HAPPY 1 YEAR PYARE LOGON (here's a little something for you click on your name)</h2>
         <div class="gcMember" onclick="showWishes('Chachi')">
-            <!-- Removed image element -->
-            <p>chachi</p>
+            <p>chachi <div class="hearts"></div></p>
         </div>
         <div class="gcMember" onclick="showWishes('Daud')">
-            <!-- Removed image element -->
-            <p>daud</p>
+            <p>daud <div class="hearts"></div></p>
         </div>
         <div class="gcMember" onclick="showWishes('Ahmed')">
-            <!-- Removed image element -->
-            <p>ahmed</p>
+            <p>ahmed <div class="hearts"></div></p>
         </div>
         <div class="gcMember" onclick="showWishes('Fatima')">
-            <!-- Removed image element -->
-            <p>fatima</p>
+            <p>fatima <div class="hearts"></div></p>
         </div>
         <div class="gcMember" onclick="showWishes('Willy')">
-            <!-- Removed image element -->
-            <p>silly</p>
+            <p>silly <div class="hearts"></div></p>
         </div>
         <!-- You can add more gcMembers as needed -->
     </section>
@@ -311,7 +291,7 @@
             cardPopup.style.backgroundColor = color;
 
             // Change the text color to black for better readability
-            popupMessage.innerHTML = `<span style="color: black;">${message}<div class="hearts"></div></span>`;
+            popupMessage.innerHTML = `<span style="color: black;">${message}</span>`;
 
             cardPopup.style.display = 'block';
         }
